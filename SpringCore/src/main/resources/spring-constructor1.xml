@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="cart1" class="com.springXmlConfigurationDI.constructor.injection.CartItems"></bean>
+
+    <bean id="cart2" class="com.springXmlConfigurationDI.constructor.injection.CartItems">
+
+        <constructor-arg>
+            <list>
+                <value>Laptop</value>
+                <value>Mobile</value>
+                <value>TV</value>
+                <value>Oven</value>
+            </list>
+        </constructor-arg>
+        <constructor-arg>
+            <map>
+                <entry key="Laptop" value="60000"></entry>
+                <entry key="Laptop" value="65000"></entry>
+                <entry key="Mobile" value="40000"></entry>
+                <entry key="Oven" value="80000"></entry>
+            </map>
+        </constructor-arg>
+    </bean>
+
+    <bean id="cart3" class="com.springXmlConfigurationDI.constructor.injection.CartItems">
+        <constructor-arg value="Car"></constructor-arg>
+
+        <constructor-arg>
+            <list>
+                <value>Laptop</value>
+                <value>Mobile</value>
+                <value>TV</value>
+                <value>Oven</value>
+            </list>
+        </constructor-arg>
+        <constructor-arg>
+            <map>
+                <entry key="Laptop" value="60000"></entry>
+                <entry key="Laptop" value="65000"></entry>
+                <entry key="Mobile" value="40000"></entry>
+                <entry key="Oven" value="80000"></entry>
+            </map>
+        </constructor-arg>
+    </bean>
+
+    <bean id="order1" class="com.springXmlConfigurationDI.constructor.injection.Order">
+        <constructor-arg value="rohan@gmail.com"></constructor-arg>
+        <constructor-arg ref="cart3"></constructor-arg>
+    </bean>
+
+</beans>
