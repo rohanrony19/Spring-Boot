@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--Address Bean Configuration using setter injection-->
+    <bean id="home" class="com.springXmlConfigurationDI.setter.injection.Address">
+        <property name="pinCode" value="577201"></property>
+        <property name="city" value="Shimoga"></property>
+        <property name="country" value="India"></property>
+    </bean>
+    <!--Student Bean Configuration using setter injection-->
+    <bean id="s1" class="com.springXmlConfigurationDI.setter.injection.Student">
+        <property name="id" value="01"></property>
+        <property name="name" value="raji"></property>
+        <property name="age" value="24"></property>
+
+        <!--Address Datatype-->
+        <!--Bean id of another bean object-->
+        <property name="address" ref="home"></property>
+    </bean>
+</beans>
