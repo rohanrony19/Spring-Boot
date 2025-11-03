@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="product" class="com.springXmlConfigurationDI.SpringBeanAutoWiring.Product">
+        <constructor-arg value="101"/>
+        <constructor-arg value="Iphone 16"/>
+        <constructor-arg value="75000"/>
+    </bean>
+
+    <bean id="product1" class="com.springXmlConfigurationDI.SpringBeanAutoWiring.Product">
+        <constructor-arg value="101"/>
+        <constructor-arg value="Iphone 16 pro"/>
+        <constructor-arg value="75000"/>
+    </bean>
+
+
+    <!--inject Product Bean Object without using ref-->
+    
+    <!--if autowire is no it doesn't inject automatically we have to do it manually  -->
+    <!-- <bean id="cart1" class="com.springXmlConfigurationDI.SpringBeanAutoWiring.Cart" autowire="no"/>-->
+
+    <!-- if autowire is byName using variable name = product and bean id = product if it's same it will inject automatically-->
+    <bean id="cart" class="com.springXmlConfigurationDI.SpringBeanAutoWiring.Cart" autowire="byName">
+        <property name="noOfItems" value="1"/>
+    <!--configure using only 1 method autowire or manual-->
+        <!--<property name="product1" ref="product1"></property>-->
+        <!--<property name="product" ref="product"></property>-->
+    </bean>
+
+    <!--    using byName   -->
+    <bean id="order" class="com.springXmlConfigurationDI.SpringBeanAutoWiring.Order" autowire="byName">
+    </bean>
+
+    <!--    using byType   -->
+    <bean id="college" class="com.springXmlConfigurationDI.SpringBeanAutoWiring.College" autowire="byType">
+    </bean>
+    <!--don't use same parameter same / datatype-->
+    <bean id="s1" class="com.springXmlConfigurationDI.SpringBeanAutoWiring.Student" >
+        <!--    <bean id="s2" class="com.springXmlConfigurationDI.SpringBeanAutoWiring.Student" ></bean>-->
+        <property name="id" value="21"/>
+        <property name="name" value="Gopal"/>
+    </bean>
+
+    <!-- using constructor-->
+    <bean id="patient" class="com.springXmlConfigurationDI.SpringBeanAutoWiring.Patient">
+        <property name="id" value="01"/>
+        <property name="name" value="sheela"/>
+    </bean>
+
+<!--     -->
+
+    <bean id="hospital" class="com.springXmlConfigurationDI.SpringBeanAutoWiring.Hospital" autowire="constructor">
+        <property name="name" value="Georgia"/>
+    </bean>
+
+
+
+</beans>
