@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--Constructor Injection-->
+    <bean id="patient1" class="com.springXmlConfigurationDI.constructor.injection.Patient">
+    </bean>
+
+    <!--Without name and index is for ordered values-->
+    <bean id="patient2" class="com.springXmlConfigurationDI.constructor.injection.Patient">
+        <constructor-arg value="406" ></constructor-arg>
+        <constructor-arg value="Teena"></constructor-arg>
+    </bean>
+
+    <!--use variable name to inject values-->
+    <bean id="patient3" class="com.springXmlConfigurationDI.constructor.injection.Patient">
+        <constructor-arg value="402" name="patientId"></constructor-arg>
+        <constructor-arg value="Meena" name="patientName"></constructor-arg>
+    </bean>
+
+    <!--use index for injecting the values for the particular index-->
+    <bean id="patient4" class="com.springXmlConfigurationDI.constructor.injection.Patient">
+        <constructor-arg value="96588931533" index="2"></constructor-arg>
+        <constructor-arg value="404" index="0"></constructor-arg>
+        <constructor-arg value="Leena" index="1"></constructor-arg>
+
+    </bean>
+</beans>
