@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+                <!--Bean Configuration using XML-->
+
+    <!--Employee-->
+    <!-- bean definitions here -->
+    <bean id="employee1" class="com.springXmlConfigurationDI.setter.injection.Employee">
+    <!--Property name is nothing but variable name-->
+    <!--It's a setter injection-->
+        <property name="company" value="Deloitte">
+        </property>
+        <property name="salary" value="50000">
+        </property>
+    </bean>
+
+    <!--Product1-->
+    <bean id="product1" class="com.springXmlConfigurationDI.setter.injection.Product">
+        <property name="productId" value="100"></property>
+        <property name="productName" value="Iphone"></property>
+        <property name="price" value="70000"></property>
+        <property name="isExpired" value="true"></property>
+    </bean>
+    <!--Product2-->
+    <bean id="product2" class="com.springXmlConfigurationDI.setter.injection.Product">
+        <property name="productId" value="200"></property>
+        <property name="productName" value="MacBook"></property>
+        <property name="price" value="120000"></property>
+        <property name="isExpired" value="false"></property>
+        <property name="inStock" value="Y"></property>
+    </bean>
+    
+    <!--Order-->
+    <bean id="order1" class="com.springXmlConfigurationDI.setter.injection.Order">
+        <property name="orderId" value="111"></property>
+<!--        Not Recommended-->
+<!--        <property name="productList" value="Apple,Mango,Banana"></property>-->
+        <property name="productList">
+            <!--List-->
+            <list>
+                <value>Apple</value>
+                <value>Mango</value>
+                <value>Banana</value>
+            </list>
+        </property>
+        <property name="price" >
+            <!--Set-->
+            <set>
+                <value>100</value>
+                <value>200</value>
+                <value>200</value>
+                <value>400</value>
+            </set>
+        </property>
+    </bean>
+
+    <bean id="order2" class="com.springXmlConfigurationDI.setter.injection.Order">
+        <property name="orderId" value="111"></property>
+        <property name="productAndPrice">
+            <map>
+                <entry key="Pizza" value="300"></entry>
+                <entry key="Burger" value="120"></entry>
+                <entry key="Wrap" value="100"/>
+                <entry key="Rolls" value="60"/>
+            </map>
+        </property>
+    </bean>
+</beans>
