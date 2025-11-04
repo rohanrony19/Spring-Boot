@@ -7,6 +7,7 @@ public class PaymentInitializer {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(PaymentConfig.class);
         PaymentGateway payment = context.getBean(PaymentGateway.class);
+
         PaymentType paymentType = payment.getPaymentType();
         System.out.println(paymentType);
         System.out.println(paymentType.getPaymentType());
