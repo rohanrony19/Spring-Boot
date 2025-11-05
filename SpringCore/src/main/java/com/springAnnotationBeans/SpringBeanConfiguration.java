@@ -63,4 +63,5 @@ public class SpringBeanConfiguration {
         return college;
     }
 
+
 }
