@@ -55,6 +55,7 @@ public class SpringBeanConfiguration {
     }
 
 
+
     // without bean id, we have use method name as bean id
     @Bean
     public College getCollege3(){
