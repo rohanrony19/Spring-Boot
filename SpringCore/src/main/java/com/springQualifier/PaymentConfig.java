@@ -17,7 +17,6 @@ public class PaymentConfig {
         return payment;
     }
 
-
     // default bean injection without using @Qualifier
 
     @Bean
