@@ -20,6 +20,7 @@ public class PaymentConfig {
     // default bean injection without using @Qualifier
 
 
+
     @Bean
     public PaymentType debitCard(){
         PaymentType payment = new PaymentType();
