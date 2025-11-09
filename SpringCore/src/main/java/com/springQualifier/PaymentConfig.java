@@ -24,8 +24,6 @@ public class PaymentConfig {
 
 
 
-
-
     @Bean
     public PaymentType debitCard(){
         PaymentType payment = new PaymentType();
